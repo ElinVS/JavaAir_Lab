@@ -20,9 +20,5 @@ public class Plane {
         return this.planeType.getWeight();
     }
 
-    public void setPlaneType(PlaneType planeType) {
-        this.planeType = planeType;
-    }
-
 
 }
