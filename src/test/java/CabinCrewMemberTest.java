@@ -31,5 +31,4 @@ public class CabinCrewMemberTest {
        assertEquals("Thank you for flying with JavaAir Today", cabinCrewMember.relayMessage());
    }
 
-
 }

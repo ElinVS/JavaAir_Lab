@@ -32,35 +32,49 @@ public class Flight {
 
     }
 
-    public ArrayList<Pilot> getPilotArrayList() {
-        return pilotArrayList;
+    public int getPilotArrayCount() {
+        return this.pilotArrayList.size();
     }
 
-    public ArrayList<CabinCrewMember> getCabinCrewMemberArrayList() {
-        return cabinCrewMemberArrayList;
+    public ArrayList<CabinCrewMember> getCabinCrewMemberCount() {
+        return this.cabinCrewMemberArrayList;
     }
 
-    public ArrayList<Passenger> getPassengerArrayList() {
-        return passengerArrayList;
+    public int getPassengerCount() {
+        return this.passengerArrayList.size();
     }
 
     public Plane getPlane() {
-        return plane;
+        return this.plane;
     }
 
     public String getFlightNumber() {
-        return flightNumber;
+        return this.flightNumber;
     }
 
     public String getDestination() {
-        return destination;
+        return this.destination;
     }
 
     public String getDepartureAirport() {
-        return departureAirport;
+        return this.departureAirport;
     }
 
     public String getDepartureTime() {
-        return departureTime;
+        return this.departureTime;
+    }
+
+    public void addPassenger(Passenger passenger) {
+        if (this.getPassengerCount() < this.plane.getCapacity()){
+             this.passengerArrayList.add(passenger);
+        }
+    }
+
+
+    public int getSeatCount() {
+        return this.plane.getCapacity() - this.getPassengerCount();
     }
 }
+
+//return the number of available seats
+//book a passenger (if there are remaining seats)

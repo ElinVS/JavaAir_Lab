@@ -13,7 +13,7 @@ public class Pilot extends CabinCrewMember{
         return pilotLicenceNumber;
     }
 
-    public String canFly(String action) {
+    public String fly(String action) {
         return "Cabin-crew prepare for " + action;
     }
 }

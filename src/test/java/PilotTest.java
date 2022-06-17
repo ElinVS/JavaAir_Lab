@@ -30,7 +30,7 @@ public class PilotTest {
     }
 
     @Test
-    public void Fly(){
-        assertEquals("Cabin-crew prepare for landing", pilot.canFly("landing"));
+    public void canFlyPlane(){
+        assertEquals("Cabin-crew prepare for landing", pilot.fly("landing"));
     }
 }
