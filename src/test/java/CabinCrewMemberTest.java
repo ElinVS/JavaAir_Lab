@@ -10,6 +10,8 @@ public class CabinCrewMemberTest {
     CabinCrewMember cabinCrewMember;
     CabinCrewMember cabinCrewMember1;
 
+
+
    @Before
     public void before(){
        cabinCrewMember = new CabinCrewMember("Billie", RankType.FLIGHT_ATTENDANT);
