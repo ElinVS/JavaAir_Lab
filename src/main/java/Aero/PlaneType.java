@@ -2,7 +2,7 @@ package Aero;
 
 public enum PlaneType {
 
-    BOEING747(1,100),
+    BOEING747(5,100),
     AIRBUS380(5,200),
     FOKKER100(10,300),
     CONCORDE(15,400);

@@ -38,21 +38,21 @@ public class FlightTest {
 
         pilot1 = new Pilot("Amanda", RankType.CAPTAIN,"AAA111");
         pilot2 = new Pilot("Bea", RankType.FIRST_OFFICER, "BBB222");
-        ArrayList<Pilot> pilotArrayList = new ArrayList<>();
+        pilotArrayList = new ArrayList<>();
         pilotArrayList.add(pilot1);
         pilotArrayList.add(pilot2);
 
         cabinCrewMember1 = new CabinCrewMember("Kip", RankType.FLIGHT_ATTENDANT);
         cabinCrewMember2 = new CabinCrewMember("Pernilla", RankType.FLIGHT_ATTENDANT);
         cabinCrewMember3 = new CabinCrewMember("Penny", RankType.PURSER);
-        ArrayList<CabinCrewMember> cabinCrewMemberArrayList = new ArrayList<>();
+        cabinCrewMemberArrayList = new ArrayList<>();
         cabinCrewMemberArrayList.add(cabinCrewMember1);
         cabinCrewMemberArrayList.add(cabinCrewMember2);
         cabinCrewMemberArrayList.add(cabinCrewMember3);
 
         plane = new Plane(PlaneType.BOEING747);
 
-        ArrayList<Passenger> passengerArrayList = new ArrayList<>();
+        passengerArrayList = new ArrayList<>();
         passenger1 = new Passenger("Ophelia", 3);
         passenger2 = new Passenger("Barry", 4);
         passenger3 = new Passenger("Sophia", 2);
@@ -102,34 +102,30 @@ public class FlightTest {
     }
 
     @Test
-    public void availableSeats(){
-        passengerArrayList.add(passenger1);
-        passengerArrayList.add(passenger2);
-        passengerArrayList.add(passenger3);
-        assertEquals(2, flight.getSeatCount());
+    public void getNumberOfAvailableSeats(){
+        flight.addPassenger(passenger1);
+        flight.addPassenger(passenger2);
+        flight.addPassenger(passenger3);
+        assertEquals(2,flight.getSeatCount());
     }
 
     @Test
-    public void canBookPassengerOnFlight(){
+    public void canAddPassengerToPlane(){
         flight.addPassenger(passenger1);
-        flight.addPassenger(passenger2);
-        flight.addPassenger(passenger3);
-        assertEquals(3, flight.getPassengerCount());
+        assertEquals(1, flight.getPassengerCount());
     }
 
     @Test
-    public void canNotBookPassengerOnFlight(){
+    public void canNotAddPassengerToPlane(){
         flight.addPassenger(passenger1);
         flight.addPassenger(passenger2);
         flight.addPassenger(passenger3);
         flight.addPassenger(passenger1);
         flight.addPassenger(passenger2);
         flight.addPassenger(passenger3);
+        assertEquals(0,flight.getSeatCount());
         assertEquals(5, flight.getPassengerCount());
     }
-
-
-
 
 
 }

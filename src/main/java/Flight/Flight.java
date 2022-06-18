@@ -22,7 +22,7 @@ public class Flight {
     public Flight(ArrayList<Pilot> pilotArrayList, ArrayList<CabinCrewMember> cabinCrewMemberArrayList, Plane plane, String flightNumber, String destination, String departureAirport, String departureTime) {
         this.pilotArrayList = pilotArrayList;
         this.cabinCrewMemberArrayList = cabinCrewMemberArrayList;
-        this.passengerArrayList = new ArrayList<>();
+        this.passengerArrayList = new ArrayList<Passenger>();
 
         this.plane = plane;
         this.flightNumber = flightNumber;
@@ -65,11 +65,11 @@ public class Flight {
     }
 
     public void addPassenger(Passenger passenger) {
-        if (this.getPassengerCount() < this.plane.getCapacity()){
+        if (passengerArrayList.size() < this.plane.getCapacity()){
              this.passengerArrayList.add(passenger);
         }
-    }
 
+    }
 
     public int getSeatCount() {
         return this.plane.getCapacity() - this.getPassengerCount();
