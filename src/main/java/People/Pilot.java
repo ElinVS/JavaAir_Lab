@@ -10,7 +10,7 @@ public class Pilot extends CabinCrewMember{
     }
 
     public String getPilotLicenceNumber() {
-        return pilotLicenceNumber;
+        return this.pilotLicenceNumber;
     }
 
     public String fly(String action) {

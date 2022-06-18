@@ -34,8 +34,7 @@ public class FlightManagerTest {
     ArrayList<Passenger> passengerArrayList = new ArrayList<>();
     Passenger passenger1;
     Passenger passenger2;
-    Passenger passenger3;
-    
+
 
     @Before
     public void before(){
