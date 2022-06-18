@@ -1,11 +1,11 @@
-
 import Flight.Flight;
 import Flight.FlightManager;
-
 import People.CabinCrewMember;
 import People.Passenger;
 import People.Pilot;
+import People.RankType;
 import Plane.Plane;
+import Plane.PlaneType;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,7 +16,10 @@ import static org.junit.Assert.assertEquals;
 public class FlightManagerTest {
 
     FlightManager flightManager;
-    Flight flight;
+    Flight flightA;
+    Plane plane;
+
+    Pilot pilot;
 
     ArrayList<Pilot> pilotArrayList;
     Pilot pilot1;
@@ -27,46 +30,56 @@ public class FlightManagerTest {
     CabinCrewMember cabinCrewMember2;
     CabinCrewMember cabinCrewMember3;
 
-    Plane plane;
 
-    ArrayList<Passenger> passengerArrayList;
+    ArrayList<Passenger> passengerArrayList = new ArrayList<>();
     Passenger passenger1;
     Passenger passenger2;
     Passenger passenger3;
-
-
+    
 
     @Before
     public void before(){
+        pilot = new Pilot("Bob", RankType.CAPTAIN, "223344");
+        plane = new Plane(PlaneType.FOKKER100);
+        passengerArrayList = new ArrayList<>();
 
-
-
-        flight = new Flight(pilotArrayList, cabinCrewMemberArrayList, plane, "ABC123", "BAR", "EDI","09:00");
-        flightManager = new FlightManager(flight);
-
+        flightA = new Flight(pilotArrayList, cabinCrewMemberArrayList, plane, "ABC123", "LON", "EDI", "09:00");
+        flightManager = new FlightManager(flightA);
     }
 
+    @Test
+    public void hasAFlight(){
+        assertEquals(flightA,flightManager.getFlight());
+    }
+
+    @Test
+    public void flightHasAWeight(){
+        assertEquals(300, plane.getWeight());
+    }
 
     @Test
     public void planesLuggageLimit(){
-        assertEquals();
+        assertEquals(150,flightManager.getLuggageLimit());
     }
 
+    @Test
+    public void passengerLuggageLimitForAFlight(){
+        assertEquals(15, flightManager.passengerLuggageLimit());
+    }
+
+    @Test
+    public void bookedLuggageWeight(){
+        flightA.addPassenger(passenger1);
+        flightA.addPassenger(passenger2);
+        assertEquals(30, flightManager.bookedWeight());
+    }
+
+    @Test
+    public void availableLuggageWeight(){
+        flightA.addPassenger(passenger1);
+        flightA.addPassenger(passenger2);
+        assertEquals(120, flightManager.remainingLuggageWeight());
+    }
 }
 
 
-//Assumptions:
-//
-//Each passenger bag weighs the same
-//Planes reserve half of their total weight for passenger bags
-//The weight of bag per person is the weight reserved for passenger bags divided by the capacity
-//Passengers exist for a single flight only
-
-//Create a FlightManager which can:
-//
-//calculate how much baggage weight should be reserved for each passenger for a flight
-// planes weight / 2 = maxLuggageLimit
-//maxLuggageLimit / capacity of flight.
-
-//calculate how much baggage weight is booked by passengers of a flight
-//calculate how much overall weight reserved for baggage remains for a flight

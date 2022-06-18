@@ -68,7 +68,6 @@ public class Flight {
         if (passengerArrayList.size() < this.plane.getCapacity()){
              this.passengerArrayList.add(passenger);
         }
-
     }
 
     public int getSeatCount() {
