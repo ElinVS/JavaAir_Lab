@@ -1,4 +1,4 @@
-package Aero;
+package Plane;
 
 public enum PlaneType {
 
@@ -6,7 +6,6 @@ public enum PlaneType {
     AIRBUS380(5,200),
     FOKKER100(10,300),
     CONCORDE(15,400);
-
 
     private final int capacity;
     private final int weight;

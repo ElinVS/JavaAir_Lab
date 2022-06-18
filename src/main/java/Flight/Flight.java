@@ -1,6 +1,6 @@
 package Flight;
 
-import Aero.Plane;
+import Plane.Plane;
 import People.CabinCrewMember;
 import People.Passenger;
 import People.Pilot;

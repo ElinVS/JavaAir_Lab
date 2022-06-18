@@ -1,4 +1,4 @@
-package Aero;
+package Plane;
 
 public class Plane {
 

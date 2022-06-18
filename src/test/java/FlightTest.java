@@ -1,5 +1,5 @@
-import Aero.Plane;
-import Aero.PlaneType;
+import Plane.Plane;
+import Plane.PlaneType;
 import Flight.Flight;
 import People.CabinCrewMember;
 import People.Passenger;
@@ -126,6 +126,4 @@ public class FlightTest {
         assertEquals(0,flight.getSeatCount());
         assertEquals(5, flight.getPassengerCount());
     }
-
-
 }

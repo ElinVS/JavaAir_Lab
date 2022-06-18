@@ -1,5 +1,5 @@
-import Aero.Plane;
-import Aero.PlaneType;
+import Plane.Plane;
+import Plane.PlaneType;
 import org.junit.Before;
 import org.junit.Test;
 
