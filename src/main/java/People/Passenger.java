@@ -1,20 +1,13 @@
 package People;
 
-
-import Flight.Flight;
-
-import java.util.Random;
-
 public class Passenger extends Person{
 
     private int numberOfBags;
-    private int seatNumber;
+
 
     public Passenger(String name, int numberOfBags) {
         super(name);
         this.numberOfBags = numberOfBags;
-        this.seatNumber = 0;
-
     }
 
     public int getNumberOfBags() {
@@ -25,7 +18,9 @@ public class Passenger extends Person{
         this.numberOfBags = numberOfBags;
     }
 
-//    public int getSeatNumber() {
+
+
+    //    public int getSeatNumber() {
 //        return this.seatNumber;
 //
 //    }

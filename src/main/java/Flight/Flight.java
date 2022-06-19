@@ -74,6 +74,3 @@ public class Flight {
         return this.plane.getCapacity() - this.getPassengerCount();
     }
 }
-
-//return the number of available seats
-//book a passenger (if there are remaining seats)

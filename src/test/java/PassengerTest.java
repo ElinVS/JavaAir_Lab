@@ -1,3 +1,4 @@
+import Flight.Flight;
 import People.Passenger;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,6 +9,7 @@ public class PassengerTest {
 
     Passenger passenger;
     Passenger passenger1;
+
 
     @Before
     public void before(){

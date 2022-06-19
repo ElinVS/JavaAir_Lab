@@ -126,4 +126,6 @@ public class FlightTest {
         assertEquals(0,flight.getSeatCount());
         assertEquals(5, flight.getPassengerCount());
     }
+
+
 }
