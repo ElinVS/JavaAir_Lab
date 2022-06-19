@@ -21,7 +21,20 @@ public class PassengerTest {
     }
 
     @Test
+    public void canUpdateNameOfPassenger(){
+        passenger.setName("Barry");
+        assertEquals("Barry", passenger.getName());
+    }
+
+    @Test
     public void hasBags(){
         assertEquals(1,passenger1.getNumberOfBags());
     }
+
+    @Test
+    public void canUpdateNumberOfBags(){
+        passenger1.setNumberOfBags(3);
+        assertEquals(3,passenger1.getNumberOfBags());
+    }
+
 }

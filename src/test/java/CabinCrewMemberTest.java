@@ -23,9 +23,21 @@ public class CabinCrewMemberTest {
        assertEquals("Billie", cabinCrewMember.getName());
    }
 
+    @Test
+    public void canUpdateNameOfPassenger(){
+        cabinCrewMember1.setName("Larry");
+        assertEquals("Larry", cabinCrewMember1.getName());
+    }
+
    @Test
     public void hasARank(){
        assertEquals(RankType.PURSER, cabinCrewMember1.getRankType());
+   }
+
+   @Test
+   public void canUpdateRankType(){
+       cabinCrewMember.setRankType(RankType.PURSER);
+       assertEquals(RankType.PURSER, cabinCrewMember.getRankType());
    }
 
    @Test

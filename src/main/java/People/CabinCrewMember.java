@@ -13,6 +13,10 @@ public class CabinCrewMember extends Person{
         return ranktype;
     }
 
+    public void setRankType(RankType ranktype) {
+        this.ranktype = ranktype;
+    }
+
     public String relayMessage() {
         return "Thank you for flying with JavaAir Today";
     }

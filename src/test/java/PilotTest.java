@@ -11,7 +11,7 @@ public class PilotTest {
 
     @Before
     public void before(){
-        pilot = new Pilot("Adam", RankType.CAPTAIN, "ABC123");
+        pilot = new Pilot("Adam", RankType.FIRST_OFFICER, "ABC123");
     }
 
     @Test
@@ -20,7 +20,19 @@ public class PilotTest {
     }
 
     @Test
+    public void canUpdateNameOfPassenger(){
+        pilot.setName("Alex");
+        assertEquals("Alex", pilot.getName());
+    }
+
+    @Test
     public void hasARank(){
+        assertEquals(RankType.FIRST_OFFICER, pilot.getRankType());
+    }
+
+    @Test
+    public void canUpdateRankType(){
+        pilot.setRankType(RankType.CAPTAIN);
         assertEquals(RankType.CAPTAIN, pilot.getRankType());
     }
 
