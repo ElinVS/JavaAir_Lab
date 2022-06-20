@@ -33,7 +33,12 @@ public class PilotTest {
     @Test
     public void canUpdateRankType(){
         pilot.setRankType(RankType.CAPTAIN);
-        assertEquals(RankType.CAPTAIN, pilot.getRankType());
+        assertEquals(RankType.CAPTAIN , pilot.getRankType());
+    }
+
+    @Test
+    public void canRelayMessage(){
+        assertEquals("Good-morning, this is your captain speaking", pilot.relayMessage("Good-morning, this is your captain speaking"));
     }
 
     @Test

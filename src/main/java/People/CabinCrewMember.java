@@ -17,7 +17,7 @@ public class CabinCrewMember extends Person{
         this.ranktype = ranktype;
     }
 
-    public String relayMessage() {
-        return "Thank you for flying with JavaAir Today";
+    public String relayMessage(String message) {
+        return message;
     }
 }

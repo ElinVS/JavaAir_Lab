@@ -42,7 +42,7 @@ public class CabinCrewMemberTest {
 
    @Test
     public void canRelayMessages(){
-       assertEquals("Thank you for flying with JavaAir Today", cabinCrewMember.relayMessage());
+       assertEquals("Thank you for flying with JavaAir Today", cabinCrewMember.relayMessage("Thank you for flying with JavaAir Today"));
    }
 
 }
